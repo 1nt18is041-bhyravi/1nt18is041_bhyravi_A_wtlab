@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ASSIGNMENT</title>
+
+<script>
+
+    function myFunc1() {
+        let items = ["goal", "new", "user", "sit", "eat", "dinner"] ;
+        const a = new RegExp("e");
+        document.getElementById("p1").innerHTML = "Output : " +items.filter(item => !a.test(item));
+    }
+    
+    function myFunc2() {
+        let items = ["goal", "new", "user", "sit", "eat", "dinner"];
+        const b = /e/;
+        const c = /n/;
+        document.getElementById("p2").innerHTML = "Output : " +items.filter(item => b.test(item)&&c.test(item));
+    }
+    
+    function myFunc3()
+    {
+        items = ["lovely", "1\ndentist", "2 lonely", "eden", "fly\n", "dent"]
+        const d = /^den/;
+        const e = /ly$/;
+        document.getElementById("p3").innerHTML = "Output : " +items.filter(item => d.test(item)||e.test(item));
+    }
+    
+    function myFunc4()
+    {
+        items = ["handed", "hand", "handy", "unhanded", "handle", "hand-2"]
+        const f = /^hand[a-zA-Z]+/;
+        document.getElementById("p4").innerHTML = "Output : " +items.map(item => 
+        {
+        if(f.test(item))
+        return item.replace('hand','X');
+        else
+        return item;
+        })
+    }
+    
+    function myFunc5()
+    {
+        let str= "refused reed redo received"
+        const g =/removed|reed|refused|received/gi;
+          let newstr=str.replace(g ,"X");
+          document.getElementById("p5").innerHTML = "Output : " +newstr;
+    }
+    
+    function myFunc6()
+    {
+        let str= "th\\er\\e ar\\e common asp\\ects among th\\e alt\\ernations";
+           let h=/\\e/gi;
+          let newstr=str.replace(h,"e");
+          document.getElementById("p6").innerHTML = "Output : " +newstr;
+    }
+    </script>
+
+<body>
+<style>
+    body {
+        background-image: url(https://images.unsplash.com/photo-1519750783826-e2420f4d687f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80);
+        background-size: 1400px 700px
+    }
+    p {
+        color:green;
+        font-family:Georgia, 'Times New Roman', Times, serif ;
+        font-size: larger;
+    }
+    button{
+        background-color: black;
+        color: blue;
+    }
+    h1{
+        font-family: Georgia, 'Times New Roman', Times, serif ;
+    }
+
+</style>
+
+<h1 style="color: purple;"><B>REGULAR EXPRESSIONS</B></h1>
+
+<center><p><B>Array : ["goal", "new", "user", "sit", "eat", "dinner"]</B></p>
+<p><B>For the given array,click on this button to filter all elements that do not contain e</B></p>
+<button onclick="myFunc1()"><B>CLICK</B></button>
+<B><p id="p1"></p></B>
+<br>
+        
+<p><B>Array : ["goal", "new", "user", "sit", "eat", "dinner"]</B></p>
+<p><B>For the given array,click on this button to filter all elements that contains both e and n</B></p>
+<button onclick="myFunc2()"><B>CLICK</B></button>
+<B><p id="p2"></p></B>
+<br>
+        
+<p><B>Array : ["lovely", "1\ndentist", "2 lonely", "eden", "fly\n", "dent"]</B></p>
+<p><B>For the given array,click on this button to filter all elements that start with den or end with ly</B></p>
+<button onclick="myFunc3()"><B>CLICK</B></button>
+<B><p id="p3"></p></B>
+<br>
+        
+<p><B>Array : ["handed", "hand", "handy", "unhanded", "handle", "hand-2"]</B></p>
+<p><B>For the given array,click on this button to replace hand with X for all words that start with hand followed by at least one word character</B></p>
+<button onclick="myFunc4()"><B>CLICK</B></button>
+<B><p id="p4"></p></B>
+<br>
+        
+<p><B>String : ["refused reed redo recieved"]</B></p>
+<p><B>For the given string,click on this button to replace all occurrences of removed or reed or received or refused with X</B></p>
+<button onclick="myFunc5()"><B>CLICK</B></button>
+<B><p id="p5"></p></B>
+<br>
+
+<p><B>String : ["th\\er\\e ar\\e common asp\\ects among th\\e alt\\ernations"]</B></p>
+<p><B>For the given string,click on this button to replace all occurrences of \e with e</B></p>
+<button onclick="myFunc6()"><B>CLICK</B></button>
+<B><p id="p6"></p></B></center>
+
+</head>
+</body>
+</html>

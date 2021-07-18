@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#myDiv2 {
+  background-color:grey;
+  padding: 50px;
+}
+ #myP2 {
+  background-color: pink; 
+  font-size: 20px;
+  border: 1px solid;
+  padding: 20px;
+}
+body{
+        background-color:turquoise;
+    }
+</style>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<center>
+<div id="myDiv2">
+  <h2>Capturing:</h2>
+  <p id="myP2">Try this!!!</p>
+</div>
+</center>
+
+<script>
+
+
+document.getElementById("myP2").addEventListener("click", function() {
+  alert("You clicked the pink element!");
+}, true);
+
+document.getElementById("myDiv2").addEventListener("click", function() {
+  alert("You clicked the red element!");
+}, true);
+</script>
+
+</body>
+</html>
